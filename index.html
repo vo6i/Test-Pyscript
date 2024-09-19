@@ -44,10 +44,7 @@
       print(post_id)
 
       h2ck = post.find("h2", class_="tm-title tm-title_h2")
-      title = h2ck.find("span").text.strip() # class_="tm-tittle tm-tittle_h2")
-#h2bd = post.find("p")
-#psttxt = h2bd.find("p").text.strip()
-#description = post.find("div", class_="article-formatted-body article-formatted-body article-formatted-body_version-2").text.strip()
+      title = h2ck.find("span").text.strip() 
       url = post.find("a", class_="tm-title__link", href=True)["href"].strip()
 
       print(title,url)
