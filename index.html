@@ -32,11 +32,13 @@
       from bs4 import BeautifulSoup
       from js import document, XMLHttpRequest
       
-      URL = "https://habr.com/ru/search/?target_type=posts&q=python&order_by=date"
+      url = "https://habr.com/ru/search/?target_type=posts&q=python&order_by=date"
       req = XMLHttpRequest.new()
-      req.open("GET", URL, True)
+      req.open("GET", url, True)
      
-      soup = BeautifulSoup(req.response, "html.parser")
+      soup = BeautifulSoup(req.response, "html.parser") 
+      soupia = str(soup) 
+      print(soupia) 
 
       post = soup.find("article", class_="tm-articles-list__item", id=True)
       post_id = post["id"]
