@@ -35,7 +35,7 @@
       URL = "https://habr.com/ru/search/?target_type=posts&q=python&order_by=date"
       req = XMLHttpRequest.new()
       req.open("GET", URL, True)
-      req.send(None)
+     
       soup = BeautifulSoup(req.response, "html.parser")
 
       post = soup.find("article", class_="tm-articles-list__item", id=True)
