@@ -39,7 +39,7 @@
       req = XMLHttpRequest.new()
       req.open("GET", URL, True)
       req.send(None)
-      soup = BeautifulSoup(req.content, "html.parser")
+      soup = BeautifulSoup(req.response, "html.parser")
 
       post = soup.find("article", class_="tm-articles-list__item", id=True)
       post_id = post["id"]
