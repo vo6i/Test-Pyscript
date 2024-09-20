@@ -33,11 +33,13 @@
       import requests
 
       from bs4 import BeautifulSoup
-
+      from js import document, XMLHttpRequest
+      
       URL = "https://habr.com/ru/search/?target_type=posts&q=python&order_by=date"
-
-      page = requests.get(URL)
-      soup = BeautifulSoup(page.content, "html.parser")
+      req = XMLHttpRequest.new()
+      req.open("GET", URL, True)
+      req.send(None)
+      soup = BeautifulSoup(req.content, "html.parser")
 
       post = soup.find("article", class_="tm-articles-list__item", id=True)
       post_id = post["id"]
